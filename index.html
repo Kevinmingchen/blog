@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 消除样式 */
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+
+			.box {
+				width: 238px;
+				height: 212px;
+				/* background: pink; */
+				margin: 100px auto 0;
+				border: 1px solid #d9e0ee;
+				border-top: 3px solid #ff8400;
+			}
+
+			/* 在H2就设定字号，可以避免因基线对齐导致的不居中 */
+			.box h2 {
+				height: 35px;
+				line-height: 35px;
+				font-size: 16px;
+				border-bottom: 1px solid #d9e0ee;
+				padding-left: 7px;
+				font-weight: 400;
+			}
+
+			.box h2 a {
+				color: #000;
+				font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";
+				text-decoration: none;
+				/* font-size: 16px; 这里设字号的话，会和h2的16号字体基线对齐，整体偏下*/
+				/* margin-left: 7px;和在H2加padding-left一个意思 */
+			}
+
+			.box h2 a:hover {
+				color: #ff8400;
+			}
+
+			.box .banner {
+				width: 180px;
+				height: 108px;
+				/* background: pink; */
+				margin: 7px auto 0;
+			}
+
+			.box .banner a {
+				display: block;
+				height: 108px;
+				/* background: yellow; */
+				text-decoration: none;
+				color: #fff;
+			}
+
+			/* 图片属于内元素，会与文字基线对齐，底下会有空隙，转成块就会消除 */
+			.box .banner a img {
+				display: block;
+			}
+
+			.box .banner a span {
+				display: block;
+				height: 21px;
+				line-height: 21px;
+				text-align: center;
+				background: #000;
+				font-size: 14px;
+			}
+
+			/* 因为给字体设定了颜色，所以当设置鼠标移入的时的颜色是不能覆盖的，span的字体只能用继承a的方式设置 */
+			.box .banner a span:hover {
+				color: #ff8400;
+			}
+			/* 这个间距需要用他们的间距减去li里面包含的行高的间距 ，因为文字居中，上下就会有比文字多的间距*/
+			.box .list {
+				margin-top: 10px;
+			}
+			/* 这个行高是用文字的间距量出来的，用上面的文字距底部1px的位置开始，到下文字离底下1px结束 */
+			.box .list li {
+				font-size: 12px;
+				line-height: 24px;
+				/* background复合属性，后面的9代表左右，center代表水平 */
+				background: url(点_03.png) no-repeat 9px center;
+				padding-left: 19px;
+			}
+
+			.box .list li a {
+				text-decoration: none;
+				color: #666;
+			}
+
+			.box .list a:hover {
+				color: #ff8400;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>
+				<a href="##">图片博客</a>
+			</h2>
+			<div class="banner">
+				<a href="##">
+					<img src="turtle.jpg">
+					<span>巨型象龟有多大</span>
+				</a>
+			</div>
+			<ul class="list">
+				<li>
+					<a href="##">新疆绝世美景</a>
+				</li>
+				<li>
+					<a href="##">炎炎夏日清凉出行</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
